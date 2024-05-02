@@ -344,7 +344,7 @@ void run()
                         break;
 
                 case 5:
-                        cout << "Input the value to before which to insert: ";
+                        cout << "Which is the value BEFORE which the new value will be inserted: ";
                         cin >> pos;
                         cout << "Input the value to insert: ";
                         cin >> val;
@@ -352,7 +352,7 @@ void run()
                         break;
 
                 case 6:
-                        cout << "Input the value to after which to insert: ";
+                        cout << "Which is the value AFTER which the new value will be inserted: ";
                         cin >> pos;
                         cout << "Input the value to insert: ";
                         cin >> val;
