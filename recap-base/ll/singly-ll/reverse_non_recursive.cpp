@@ -45,7 +45,7 @@ public:
 void insertAtTail(Node *&head, int val);
 void initializeList(Node *&head);
 void printList(Node *tmp);
-Node *reverseListNonRecursive(Node *&head);
+Node *reverseListNonRecursive(Node *head);
 
 // definition
 void insertAtTail(Node *&head, int val)
@@ -89,7 +89,7 @@ void printList(Node *tmp)
         }
 }
 
-Node *reverseListNonRecursive(Node *&head)
+Node *reverseListNonRecursive(Node *head)
 {
         Node *prev = NULL;
         Node *Next = NULL;
