@@ -128,7 +128,7 @@ int main()
 
         head = reverseListNonRecursive(head);
 
-        cout << "\nList after reverse: \n";
+        cout << "\nList after reverse Non-Recursively: \n";
         printList(head);
 
         return 0;
