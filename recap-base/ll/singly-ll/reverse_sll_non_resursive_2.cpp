@@ -1,4 +1,5 @@
-// 050524, Sunday, 05.00 pm
+
+// 010824, Thursday, 07.00 am
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -16,7 +17,7 @@ const int N = 1e5 + 100;
 vector<int> ans;
 vector<pii> allSrc;
 pii src, destination;
-// priority_queue<pii, vecPii, greater<pii>>q;
+priority_queue<pii, vecPii, greater<pii>> q;
 vecPii adjList[N];
 int visited[N];
 int parent[N];
@@ -40,13 +41,6 @@ public:
         }
 };
 
-// declaration
-void insertAtTail(Node *&head, int val);
-void initializeList(Node *&head);
-void printList(Node *tmp);
-Node *reverseListNonRecursive(Node *&head);
-
-// definition
 void insertAtTail(Node *&head, int val)
 {
         Node *tmp = head;
@@ -62,17 +56,17 @@ void insertAtTail(Node *&head, int val)
         {
                 tmp = tmp->next;
         }
+
         tmp->next = newNode;
 }
 
-void initializeList(Node *&head)
+void initialize_list(Node *&head)
 {
         int n = 5;
-        for (int i = n; i >= 1; i--)
-        {
+        for (int i = 1; i <= n; i++)
                 insertAtTail(head, i);
-        }
-        cout << "List initialization completed!" << endl;
+
+        cout << "\nList Initialization Completed!";
 }
 
 void printList(Node *tmp)
@@ -86,29 +80,20 @@ void printList(Node *tmp)
                 }
                 tmp = tmp->next;
         }
+        cout << endl;
 }
 
 Node *reverseListNonRecursive(Node *&head)
 {
+        Node *curr = head;
         Node *prev = NULL;
         Node *Next = NULL;
-        Node *curr = head;
 
-        // curr and Next will point to the same node while prev node will point the previous node of curr and Next.
-        // Next will become NULL first, then curr will be NULL.
-        // prev pointer  will be at the last node in the list. return prev pointer and update it with head.
         while (curr != NULL)
         {
-                // 1. get the next node in the list via the curr node
                 Next = curr->next;
-
-                // 2. put the prev node in the current node's next pointer.
                 curr->next = prev;
-
-                // 3. make the current node as the  previous node
                 prev = curr;
-
-                // 4. now move forward to the next node, which is already stored in the Next pointer.
                 curr = Next;
         }
         return prev;
@@ -116,22 +101,19 @@ Node *reverseListNonRecursive(Node *&head)
 
 int main()
 {
-        cout << endl;
-
+        cout << "\nSingly Linked List Reverse Non-Recursive\n";
         Node *head = NULL;
 
         // initialize the list
-        initializeList(head);
+        initialize_list(head);
 
-        // print list
-        cout << "List before reverse: \n";
+        cout << "\nList Before Reverse: ";
         printList(head);
 
         head = reverseListNonRecursive(head);
 
-        cout << "\nList after reverse Non-Recursively: \n";
+        cout << "\nList After Reverse: ";
         printList(head);
-        cout << endl;
 
         return 0;
 }
