@@ -63,8 +63,8 @@ void insertAtTail(Node *&head, int val)
 
 void initializeList(Node *&head)
 {
-        int n = 5;
-        for (int i = n; i >= 1; i--)
+        int x = 5;
+        for (int i = x; i >= 1; i--)
         {
                 insertAtTail(head, i);
         }
