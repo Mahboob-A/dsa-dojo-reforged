@@ -8,6 +8,7 @@ using namespace std;
 
 void sol()
 {
+        stack<int>st2; 
 
         Stack st;
 
